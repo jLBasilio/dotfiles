@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/artemis031/.oh-my-zsh"
+export ZSH="/home/jeff/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -97,10 +97,13 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=2
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  vscode
 )
 
 source $ZSH/oh-my-zsh.sh
 source ~/.git.scmbrc
+
+
 
 # User configuration
 
@@ -122,12 +125,6 @@ source ~/.git.scmbrc
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# maven
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-export M2_HOME=/opt/apache-maven
-export MAVEN_HOME=/opt/apache-maven
-export PATH=${M2_HOME}/bin:${PATH}
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -137,8 +134,21 @@ export PATH=${M2_HOME}/bin:${PATH}
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-[ -s "/home/artemis031/.scm_breeze/scm_breeze.sh" ] && source "/home/artemis031/.scm_breeze/scm_breeze.sh"
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_STUDIO=$HOME/android-studio
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools 
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_STUDIO/bin
 
-export NVM_DIR="/home/artemis031/.nvm"
+# Reverse back and forward mouse button
+xinput set-button-map $(echo $(echo $(xinput list | grep 2.4G)| cut -d'=' -f 2) | cut -d' ' -f 1) 1 2 3 4 5 6 7 9 8 10 11 12
+
+[ -s "/home/jeff/.scm_breeze/scm_breeze.sh" ] && source "/home/jeff/.scm_breeze/scm_breeze.sh"
+
+export NVM_DIR="/home/jeff/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+[ -s "/home/jeff/.scm_breeze/scm_breeze.sh" ] && source "/home/jeff/.scm_breeze/scm_breeze.sh"
+export PATH="$PATH:/home/jeff/flutter/bin"
+source ~/.fonts/*.sh
