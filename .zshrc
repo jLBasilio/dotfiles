@@ -122,7 +122,12 @@ source ~/.git.scmbrc
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-export ANDROID_HOME=$HOME/Android/Sdk
+# Reverse back and forward mouse button
+# xinput set-button-map $(echo $(echo $(xinput list | grep 2.4G)| cut -d'=' -f 2) | cut -d' ' -f 1) 1 2 3 4 5 6 7 9 8 10 11 12
+
+
+# =========== ENV VARS =========== #
+ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
@@ -130,16 +135,14 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export ANDROID_STUDIO=$HOME/android-studio
 export PATH=$PATH:$ANDROID_STUDIO/bin
 
-export DENO_INSTALL="$HOME/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
-# Reverse back and forward mouse button
-# xinput set-button-map $(echo $(echo $(xinput list | grep 2.4G)| cut -d'=' -f 2) | cut -d' ' -f 1) 1 2 3 4 5 6 7 9 8 10 11 12
 
 # Denojs
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+
+# Custom scripts
+export PATH="$PATH:$HOME/scripts"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
