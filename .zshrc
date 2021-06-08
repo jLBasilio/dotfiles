@@ -131,15 +131,14 @@ ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-export ANDROID_STUDIO=$HOME/android-studio
-export PATH=$PATH:$ANDROID_STUDIO/bin
-
+alias android_studio="$HOME/android-studio/bin/studio.sh"
 
 # Denojs
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+# Golang
+export PATH=$PATH:/usr/local/go/bin
 
 # Custom scripts
 export PATH="$PATH:$HOME/scripts"
